@@ -51,7 +51,7 @@ body {
 }
 
 .control-container{
-    position: absolute;
+    position: fixed;
     left: calc(50% - 130px);
     top: calc(50% - 90px);
     border: 1px gray solid;
