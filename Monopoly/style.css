@@ -93,4 +93,9 @@ body {
         width: 32px;
         height: 32px;
     }
+
+    .control-container{
+        left: calc(50% - 116px);
+        top: calc(50% - 76px);
+    }
 }
