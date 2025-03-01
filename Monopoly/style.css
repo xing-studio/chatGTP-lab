@@ -86,3 +86,9 @@ body {
     75% { transform: rotate(270deg); }
     100% { transform: rotate(360deg); }
 }
+
+@media only screen and (max-width: 768px) {
+    .dice {
+        font-size: 3rem;
+    }
+}
