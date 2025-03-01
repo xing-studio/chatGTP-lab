@@ -89,6 +89,6 @@ body {
 
 @media only screen and (max-width: 768px) {
     .dice {
-        font-size: 3rem;
+        font-size: 2rem;
     }
 }
