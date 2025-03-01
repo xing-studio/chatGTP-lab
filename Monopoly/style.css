@@ -1,0 +1,82 @@
+body {
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.board {
+    width: 900px;  /* 原 400px * 2.5 */
+    height: 900px;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    border: 5px solid black;
+    margin: 20px auto;
+    position: relative;
+}
+
+.player {
+    width: 90px;  /* 設定角色大小 */
+    height: 90px; /* 設定角色大小 */
+    background-image: url('character-sprite.png');
+    background-size: 360px 360px; /* 確保整張 Sprite 圖符合大小 */
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* 角色行走動畫 */
+@keyframes walk {
+    0% { background-position-x: 0px; }
+    100% { background-position-x: -270px; } /* 4 幀，每幀 90px，共 360px */
+}
+
+/* 行走時的動畫 (修正版) */
+.walking-down {
+    background-position: 0px 0px; /* 選擇向下行走的行 */
+    animation: walk 0.5s steps(3) infinite;
+}
+.walking-left {
+    background-position: 0px -90px; /* 選擇向左行走的行 */
+    animation: walk 0.5s steps(3) infinite;
+}
+.walking-right {
+    background-position: 0px -180px; /* 選擇向右行走的行 */
+    animation: walk 0.5s steps(3) infinite;
+}
+.walking-up {
+    background-position: 0px -270px; /* 選擇向上行走的行 */
+    animation: walk 0.5s steps(3) infinite;
+}
+
+.control-container{
+    position: absolute;
+    left: calc(50% - 130px);
+    top: calc(50% - 90px);
+    border: 1px gray solid;
+}
+
+.dice-container {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+
+.dice {
+    font-size: 50px;
+    margin: 10px;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: none;
+}
+
+@keyframes roll {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(90deg); }
+    50% { transform: rotate(180deg); }
+    75% { transform: rotate(270deg); }
+    100% { transform: rotate(360deg); }
+}
