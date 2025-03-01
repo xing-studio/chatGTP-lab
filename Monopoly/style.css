@@ -58,6 +58,8 @@ body {
     left: calc(50% - 130px);
     top: calc(50% - 90px);
     border: 1px gray solid;
+
+    z-index: 3;
 }
 
 .dice-container {
